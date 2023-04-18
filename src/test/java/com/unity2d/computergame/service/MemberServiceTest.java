@@ -5,6 +5,8 @@ import com.unity2d.computergame.dto.MemberSaveRequestDto;
 import com.unity2d.computergame.dto.MemberUpdateRequestDto;
 import com.unity2d.computergame.repository.MemberRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +42,11 @@ class MemberServiceTest {
     @Autowired
     private MemberService memberService;
 
+
+    @BeforeEach
+    void allClear(){
+        memberRepository.deleteAll();
+    }
     @Test
     @DisplayName("member가 등록된다")
     void memberSave(){
