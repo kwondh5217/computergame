@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ScoreSaveRequestDto {
 
-    private Long member;
+    private String name;
 
-    private Long score;
+    private int score;
 
     @Builder
-    public ScoreSaveRequestDto(Long member, Long score) {
-        this.member = member;
+    public ScoreSaveRequestDto(String name, int score) {
+        this.name = name;
         this.score = score;
     }
 }
